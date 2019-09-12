@@ -46,6 +46,7 @@ const App = props => {
         <AdditionalFeatures />
         <Total
           car={props.car}
+          price={props.price}
           additionalPrice={props.additionalPrice}
           onClick={props.deleteFeature}
         />
@@ -55,9 +56,12 @@ const App = props => {
 };
 
 const mapStatetoProps = state => {
+  console.log(state.store);
   return {
     car: state.car,
     store: state.store,
+    price: state.car.price,
+    additionalPrice: state.additionalPrice,
   };
 };
 export default connect(
